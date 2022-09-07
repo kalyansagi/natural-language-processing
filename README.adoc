@@ -1,0 +1,24 @@
+# natural-language-processing
+
+== What does this application do?
+
+This is a simple python application to implement minimum edit distance algorithm that takes two strings of any length and returns the total number of distances required to convert one string to another. The program should be flexible to take flexible costs for the insertion, deletion, and substitute operations.
+
+
+== Technical Details
+- Python Documentation: link:https://www.python.org/[Python]
+- Version control: git
+- IDE: Pycharm (Pure Python Project with venv)
+
+
+
+== Developer Guide to run the code locally
+==== `git clone https://github.com/kalyansagi/natural-language-processing.git`
+
+==== `cd /natural-language-processing`
+
+==== `git checkout main`
+
+
+
+
