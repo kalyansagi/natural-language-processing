@@ -4,15 +4,15 @@ def editdistancealgorithm(string1: str, string2: str) -> int:
     if len(string2) == 0:
         return len(string1)
     previous_row = list(range(len(string2) + 1))
-    # iterating through the string1
-    for i, c1 in enumerate(string1):
+    # iterating through the string1, i being position of each letter & character1 being each letter from string2
+    for i, character1 in enumerate(string1):
         current_row = [i + 1]
-        # iterating through the string2
-        for j, c2 in enumerate(string2):
+        # iterating through the string2, j being position of each letter & character2 being each letter from string2
+        for j, character2 in enumerate(string2):
             # finding the costs
             insert = previous_row[j + 1] + insertionCost
             delete = current_row[j] + deletionCost
-            if c1 != c2:
+            if character1 != character2:
                 replace = previous_row[j] + replaceCost
             else:
                 replace = previous_row[j] + 0
