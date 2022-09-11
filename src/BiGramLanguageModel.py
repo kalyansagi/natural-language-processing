@@ -34,7 +34,7 @@ def bigramFunction(data):
     return bigram_list, unigram_counts, bigram_counts
 
 
-def calcBigramProb(list_of_bigrams, unigram_counts, bigram_counts):
+def calculate_bigram_probability(list_of_bigrams, unigram_counts, bigram_counts):
     list_of_prob = {}
     for bigram in list_of_bigrams:
         word1 = bigram[0]
@@ -45,37 +45,9 @@ def calcBigramProb(list_of_bigrams, unigram_counts, bigram_counts):
 if __name__ == '__main__':
     words = convertTextToWords()
     bigrams, number_of_unigrams, number_of_bigrams = bigramFunction(words)
-
     print('Bigrams:', bigrams)
-    # print(bigrams)
-
     print('Bigrams and counts:', number_of_bigrams)
-    # print(number_of_bigrams)
-
     print('Unigrams and counts:', number_of_unigrams)
-    # print(number_of_unigrams)
 
-    bigramProbability = calcBigramProb(bigrams, number_of_unigrams, number_of_bigrams)
-
-    print('Bigrams and probability', bigramProbability)
-    # print(bigramProbability)
-    inputList = "This is my cat"
-    splt = inputList.split()
-    outputProb1 = 1
-    bilist = []
-    bigrm = []
-
-    for i in range(len(splt) - 1):
-        if i < len(splt) - 1:
-            bilist.append((splt[i], splt[i + 1]))
-
-    print("\n The bigrams in given sentence are ")
-    print(bilist)
-    for i in range(len(bilist)):
-        if bilist[i] in bigramProbability:
-
-            outputProb1 *= bigramProbability[bilist[i]]
-        else:
-
-            outputProb1 *= 0
-    print('\n' + 'Probablility of sentence \"This is my cat\" = ' + str(outputProb1))
+    bigram_probability = calculate_bigram_probability(bigrams, number_of_unigrams, number_of_bigrams)
+    print('Bigrams and probability', bigram_probability)
