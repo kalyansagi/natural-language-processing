@@ -1,17 +1,11 @@
-def convertTextToWords():
-    input = [
-        'The day was grey and bitter cold, and the dogs would not take the scent. '
-        'The big black bitch had taken one sniff at the bear tracks, backed off, '
-        'and skulked back to the pack with her tail between her legs.']
-    # converting the given sentence to lower case words. This helps treat `The` same as `the`
-    lower_input = list(map(lambda x: x.lower(), input))
-    dat = []
-    for i in range(len(lower_input)):
-        for word in lower_input[i].split():
-            dat.append(word)
-    print(dat)
-    return dat
+import re
 
+
+def convertTextToWords():
+    input = "The day was grey and bitter cold, and the dogs would not take the scent. The big black bitch had taken one sniff at the bear tracks, backed off, and skulked back to the pack with her tail between her legs."
+    # converting the given corpus to words
+    words = re.findall(r'\w+|[^\s\w]+', input.lower())
+    return words
 
 def bigramFunction(data):
     bigram_list = []
